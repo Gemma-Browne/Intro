@@ -1,0 +1,467 @@
+<!-- HTML Document Declaration -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the Page -->
+    <title>Taylor Browne</title>
+    
+    <!-- Internal Styles -->
+    <style>
+      /* Resetting default styles for better consistency */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1em;
+      }
+
+      /* Main Content Section Styles */
+      .profile-section {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+	  
+      .presentation-section {
+        margin: 20px 20px;
+		height: calc(100vh - 80px);
+        padding: 20px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Heading Styles */
+      h1 {
+        margin-bottom: 0px;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      /* Paragraph Styles */
+      p {
+        line-height: 1.6;
+      }
+
+      /* Profile Photo Styles */
+      .photo {
+        width: 200px;
+        height: 200px;
+        margin: 20px auto;
+        padding: 5px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .photo img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      /* Presentation and Profile Mode Styles */
+      .presentation-mode .profile-photo-container {
+        display: none;
+      }
+
+      .presentation-mode .profile-section {
+        display: none;
+      }
+
+      .presentation-mode .profile-section.active {
+        display: block;
+      }
+
+      .profile-mode .presentation-section {
+        display: none;
+      }
+
+      .profile-mode .presentation-section.active {
+        display: block;
+      }
+
+      /* Pronouns Styles */
+      #pronouns {
+        font-size: 12px;
+        color: #666;
+        margin: 0px;
+      }
+
+      /* Navigation Buttons Styles */
+      .scroll-button {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .scroll-button:hover {
+        background-color: #666;
+      }
+
+      /* Toggle Button Styles */
+      .toggle-button {
+        position: fixed;
+        bottom: 14px;
+        right: 14px;
+        z-index: 1000;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .toggle-button:hover {
+        background-color: #666;
+      }
+	      .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .left-column {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .bullet-points {
+      /* Style your bullet points here */
+      list-style-type: disc;
+    }
+
+    .right-column {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .responsive-image {
+      max-width: 100%;
+      height: auto;
+      display: block; /* Remove any default inline spacing */
+      margin: 0 auto; /* Center the image */
+    }
+	    .progress-container {
+      width: 70%;
+      margin: auto;
+    }
+
+    .progress-bar {
+      background-color: #666;
+      border: 1px solid #ccc;
+      height: 30px;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 0px;
+    }
+
+    .progress-fill {
+      background-color: #333;
+      height: 100%;
+      transition: width 0.5s ease;
+    }
+
+    .progress-label {
+      font-size: 18px;
+      font-weight: bold;
+	  margin-bottom: 10px;
+    }
+    </style>
+  </head>
+
+  <body class="profile-mode">
+    <!-- Toggle Presentation Mode Button -->
+    <button class="toggle-button" onclick="toggleMode()">Toggle Presentation Mode</button>
+
+    <!-- Page Header -->
+    <header>
+      <h1>Taylor Browne</h1>
+      <p id="pronouns">They / Them</p>
+    </header>
+
+    <!-- Profile Photo Container -->
+    <div class="profile-photo-container">
+      <div class="photo">
+        <img src="photo.jpg" alt="Your Name">
+      </div>
+    </div>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+      <h2>Who am I?</h2>
+      <!-- Profile Information -->
+			<p>Hello! I'm Taylor Browne, originally from Fort Campbell, Kentucky. My childhood was shaped in the vibrant surroundings of Phoenix, Arizona. After moving out, I earned my GED in Glendale, AZ, and then made the decision to relocate to Michigan. This move not only brought me closer to family but also allowed me to pursue education at Jackson College.</p>
+
+			<p>My family's roots extend to London, England, with a notable connection—I am the direct paternal descendant of Sir Thomas Browne Sr, MD, a prominent 17th-century English physician and author. Genealogical and DNA research reveals that I am technically the 10th great-grandson of Thomas Browne. Hi Grampa!</p>
+
+			<p>In group settings, I may come across as unapproachable or abrasive, but this is rooted in social anxiety. Despite this, I genuinely enjoy interacting with others and value the diverse perspectives they bring.</p>
+
+    </section>
+	
+    <section class="profile-section">
+      <h2>Why am I taking this class?</h2>
+      <!-- Profile Information -->
+      <p>I enrolled in this class because, even though I reside on campus, Jackson College doesn't provide classes required for the software engineering degree in person. I don't particularly appreciate taking classes in an online format. Unfortunately, I have no choice but to take this class online. And as such, here I am.</p>
+	  <p>Hopefully, Jackson College will choose to make better decisions in the future regarding their offerings.</p>
+   </section>
+   
+       <section class="profile-section">
+      <h2>Transfer Plans?</h2>
+      <!-- Profile Information -->
+<p>Currently, I am focusing on graduating from Jackson College. I would like to continue on with my academic career but at this time I am focusing on raising my GPA.</p>
+
+   </section>
+   
+          <section class="profile-section">
+      <h2>Previous Computer Experience:</h2>
+      <!-- Profile Information -->
+<p>I have an A+ level of comprehension in hardware and software. With over 10 years of experience in HTML/CSS, 6+ years in JavaScript, and 2+ years in PHP, I have a strong foundation in web development languages. Additionally, I have less than one year experience with C++ from taking this class previously.</p>
+
+   </section>
+   
+   <section class="profile-section">
+      <h2>Goals/expectations for the class?</h2>
+      <!-- Profile Information -->
+<p>My goals for this course include acquiring skills that complement existing ones, gaining confidence in C++ development, and ensuring the completion of every assignment in the course. My expectations revolve around receiving personable instruction that surpasses the scope of online tutorials, and access to up-to-date and standard resources and materials, with an emphasis on avoiding outdated course materials, certainly such as those from 1997.</p>
+
+   </section>
+   
+      <section class="profile-section">
+      <h2>Hobbies?</h2>
+      <!-- Profile Information -->
+<p>I am profoundly fascinated by delving into the frontiers of technological and scientific progress, driven by the conviction that such advancements hold the potential to elevate human potential beyond existing boundaries. The pursuit of a future where our capabilities are heightened and surpass present constraints fuels my enthusiasm for the ongoing evolution of science and technology. I also play Minecraft! And I love to cook!</p>
+
+   </section>
+	
+    <!-- Presentation Section -->
+    <section class="presentation-section" id="presentation-section-1">
+      <button class="scroll-button" onclick="scrollToSection('presentation-section-2')">Next</button>
+		<div class="container">
+		  <div class="left-column">
+		<h2>Who am I?</h2>
+			<ul class="bullet-points">
+			  <li>Hi there! I'm Taylor Browne, born in Fort Campbell, Kentucky, but I spent a significant part of my childhood in the vibrant surroundings of Phoenix, Arizona. After moving out,  I embarked on my independent journey and earned my GED while residing in Glendale, AZ. Later, I made the decision to move to Michigan, bringing me closer to my family and pursuing my education at Jackson College.</li>
+			  <p>
+			  <li>My family traces our ancestry back to London, England. I am the direct paternal decendent of Sir Thomas Browne Sr, MD. a prominent 17th-century English physician and author, known for his works in medicine, literature, and religion. Genealogical and DNA research indicates that I am technically the 10th great-grandson fof Thomas Browne. Hi Grampa! </li>
+			  <p>
+			  <li>In group settings, I might appear unapproachable or abrasive, but this stems from social anxiety. In reality, I genuinely enjoy interacting with others and value the diverse perspectives they bring.</li>
+			  
+			  <!-- Add more bullet points as needed -->
+			</ul>
+		  </div>
+
+		  <div class="right-column">
+			<video width="75%"  controls>
+				<source src="mXMPKnv21W.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		  </div>
+		</div>
+    </section>
+
+    <!-- Presentation Section -->
+    <section class="presentation-section" id="presentation-section-2">
+      <button class="scroll-button" onclick="scrollToSection('presentation-section-1')">Previous</button>
+      <button class="scroll-button" onclick="scrollToSection('presentation-section-3')">Next</button>
+
+
+    		<div class="container">
+		  <div class="left-column">
+		      <h2>Why am I taking this class?</h2>
+			<ul class="bullet-points">
+<p>I enrolled in this class because, even though I reside on campus, Jackson College doesn't provide classes required for the software engineering degree in person. I don't particularly appreciate taking classes in an online format. Unfortunately, I have no choice but to take this class online. And as such, here I am.</p>
+	  <p>Hopefully, Jackson College will choose to make better decisions in the future regarding their offerings.</p>
+			  <!-- Add more bullet points as needed -->
+			</ul>
+		  </div>
+
+		  <div class="right-column">
+      <img src="photo2.jpg" width="75%" alt="Your Name">
+	  <figcaption>CV Parking Lot, 12 vehicles</figcaption>
+		  </div>
+		</div>
+	</section>
+	
+    <!-- Presentation Section -->
+    <section class="presentation-section" id="presentation-section-3">
+      <button class="scroll-button" onclick="scrollToSection('presentation-section-2')">Previous</button>
+      <button class="scroll-button" onclick="scrollToSection('presentation-section-4')">Next</button>
+<div class="container">
+		  <div class="left-column">
+		      <h2>Transfer Plans?</h2>
+			<ul class="bullet-points">
+	  <p>Currently, I am focusing on graduating from Jackson College. I would like to continue on with my academic career but at this time I am focusing on raising my GPA.</p>
+			  <!-- Add more bullet points as needed -->
+			</ul>
+		  </div>
+
+		  <div class="right-column">
+      <img src="photo3.jpg" width="75%" alt="Your Name">
+		  </div>
+		</div>
+    </section>
+
+    <!-- Presentation Section -->
+    <section class="presentation-section" id="presentation-section-4">
+      <button class="scroll-button" onclick="scrollToSection('presentation-section-3')">Previous</button>
+      <button class="scroll-button" onclick="scrollToSection('presentation-section-5')">Next</button>
+<h2>Previous Computer Experience:</h2>
+<div class="container">
+		      
+			  
+    <div class="progress-container">
+	<p>&#9989;</p>
+    <div class="progress-label"> A+ Level Hardware/Software Comprehension </div>
+	
+  </div>
+</div>
+  
+  <div class="progress-container">
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: 100%;"></div>
+    </div>
+    <div class="progress-label">HTML/CSS (10+ Years)</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="progress-container">
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: 60%;"></div>
+    </div>
+    <div class="progress-label">JavaScript (6+ Years)</div>
+  </div>
+ </div>
+  
+  <div class="container">
+  <div class="progress-container">
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: 20%;"></div>
+    </div>
+    <div class="progress-label">PHP (2+ Years)</div>
+  </div>
+  
+</div>
+  <div class="container">
+  <div class="progress-container">
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: 10%;"></div>
+    </div>
+    <div class="progress-label">C++ (1 Year)</div>
+  </div>
+  
+  
+		  </div>
+</div>
+    </section>
+	
+       <!-- Presentation Section -->
+    <section class="presentation-section" id="presentation-section-5">
+      <button class="scroll-button" onclick="scrollToSection('presentation-section-4')">Previous</button>
+      <button class="scroll-button" onclick="scrollToSection('presentation-section-6')">Next</button>
+      <h2>Goals/expectations for the class?</h2>
+      <div class="container">
+		  <div class="left-column">
+		<h2>Goals:</h2>
+		<ul>To learn skills that can be utilized along other preexisting skillsets.</ul>
+		<ul>To be confident developing in C++.</ul>
+		<ul>To complete every assignment in this course</ul>
+		  </div>
+
+		  <div class="right-column">
+      <h2>Expectations:</h2>
+	  <ul> Personable instruction that goes beyond the limits of youtube tutorials. </ul>
+	  <ul> All resources and materials should be current and standard. (IE. No course materials from 1997) </ul>
+	 
+		</div>
+    </section>
+	
+       <!-- Presentation Section -->
+    <section class="presentation-section" id="presentation-section-6">
+      <button class="scroll-button" onclick="scrollToSection('presentation-section-5')">Previous</button>
+      <button class="scroll-button" onclick="scrollToSection('presentation-section-1')">First Slide</button>
+      <h2>Hobbies?</h2>
+      <p> I am profoundly fascinated by delving into the frontiers of technological and scientific progress, driven by the conviction that such advancements hold the potential to elevate human potential beyond existing boundaries. The pursuit of a future where our capabilities are heightened and surpass present constraints fuels my enthusiasm for the ongoing evolution of science and technology. I also play Minecraft, and love to cook!</p>
+    </section>
+	
+	
+    <!-- JavaScript for Mode Toggle -->
+    <script>
+      function toggleMode() {
+	  
+		 // Scroll to the top of the page
+		window.scrollTo(0, 0);
+		
+        // Get body element
+        var body = document.body;
+
+        // Toggle profile mode and get the current mode
+        var isProfileMode = body.classList.toggle('profile-mode');
+
+        // Toggle presentation mode if not in profile mode
+        body.classList.toggle('presentation-mode', !isProfileMode);
+
+        // Toggle header visibility based on the current mode
+        var header = document.querySelector('header');
+        header.style.display = isProfileMode ? 'block' : 'none';
+
+        // Get the current mode
+        var currentMode = isProfileMode ? 'Profile Mode' : 'Presentation Mode';
+
+        // Update button label dynamically based on the current mode
+        var button = document.querySelector('.toggle-button');
+        button.textContent = 'Toggle ' + (isProfileMode ? 'Presentation Mode' : 'Profile Mode');
+
+        // Add console printout for mode change
+        console.log('Switched to ' + currentMode);
+
+        // Additional detailed console.log messages
+        console.log('Body classes after toggling:');
+        console.log('   Profile Mode: ', isProfileMode);
+        console.log('   Presentation Mode: ', !isProfileMode);
+        console.log('Active sections after toggling:');
+        var activeSectionSelector = isProfileMode ? '.profile-section.active' : '.presentation-section.active';
+        console.log(`   Active Section: `, document.querySelector(activeSectionSelector));
+        console.log('Button label after toggling: ', button.textContent);
+      }
+
+      function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+	  
+	  // Check if URL has mode argument set to presentation
+const urlParams = new URLSearchParams(window.location.search);
+const modeParam = urlParams.get('mode');
+
+if (modeParam === 'presentation') {
+  console.log('Presentation mode requested via URL!');
+  toggleMode();
+}
+    </script>
+  </body>
+
+</html>
