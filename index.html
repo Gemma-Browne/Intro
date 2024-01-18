@@ -457,7 +457,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const modeParam = urlParams.get('mode');
 
-if (modeParam === 'presentations' | 'presentation') {
+if (modeParam === 'presentations' or 'presentation') {
   console.log('Presentation mode requested via URL!');
   toggleMode();
 }
